@@ -1,0 +1,34 @@
+name: simulador_timbeta
+description: Descubra quantas recargas e pacotes você precisa fazer para se tornar Beta LAB
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+    
+  provider: ^3.1.0
+  numberpicker: ^1.1.0
+  firebase_admob: ^0.9.0+7
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.7.2+1
+  flutter_native_splash: ^0.1.8+2
+
+flutter_icons:
+  android: "ic_launcher" 
+  ios: true
+  image_path: "assets/images/icon.png"
+
+flutter_native_splash:
+  image: assets/images/splash.png
+  color: "#212121"
+
+flutter:
+  uses-material-design: true
