@@ -2,7 +2,6 @@ import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:simulador_timbeta/ui/main_screen/components/pacote_month_box.dart';
 import 'package:simulador_timbeta/ui/main_screen/components/recarga_month_box.dart';
-import 'package:simulador_timbeta/ui/main_screen/result.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -92,7 +91,6 @@ class _MainScreenState extends State<MainScreen> {
         const SizedBox(height: 32.0),
         PacoteMonthBox(number: 3),
         const SizedBox(height: 32.0),
-        Center(child: Result()),
       ],
     );
   }

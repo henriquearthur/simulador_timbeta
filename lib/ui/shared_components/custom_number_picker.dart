@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:numberpicker/numberpicker.dart';
 
 class CustomNumberPicker extends StatefulWidget {
   final int min;
@@ -23,23 +22,39 @@ class _CustomNumberPickerState extends State<CustomNumberPicker> {
         color: Colors.black26,
         borderRadius: BorderRadius.all(Radius.circular(16.0)),
       ),
-      child: Theme(
-        data: ThemeData(
-          textTheme: TextTheme(
-            body1: Theme.of(context).textTheme.body1.copyWith(fontSize: 14.0),
-            headline:
-                Theme.of(context).textTheme.headline.copyWith(fontSize: 16.0),
+      child: Row(
+        children: <Widget>[
+          IconButton(
+            iconSize: 16,
+            icon: Icon(
+              Icons.remove,
+            ),
+            onPressed: () {
+              if (_currentValue > widget.min) setState(() => _currentValue--);
+              widget.onChange(_currentValue);
+            },
           ),
-        ),
-        child: NumberPicker.integer(
-          initialValue: _currentValue,
-          minValue: widget.min,
-          maxValue: widget.max,
-          onChanged: (newValue) {
-            widget.onChange(newValue);
-            setState(() => _currentValue = newValue);
-          },
-        ),
+          Text(
+            "$_currentValue",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: _currentValue > 0
+                  ? Colors.white
+                  : Colors.white.withOpacity(0.5),
+            ),
+          ),
+          IconButton(
+            iconSize: 16,
+            icon: Icon(
+              Icons.add,
+            ),
+            onPressed: () {
+              if (_currentValue < widget.max) setState(() => _currentValue++);
+              widget.onChange(_currentValue);
+            },
+          ),
+        ],
       ),
     );
   }
