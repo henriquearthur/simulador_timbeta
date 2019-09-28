@@ -1,6 +1,6 @@
 name: simulador_timbeta
 description: Descubra quantas recargas e pacotes você precisa fazer para se tornar Beta LAB
-version: 1.0.0+1
+version: 1.0.2+2
 
 environment:
   sdk: ">=2.2.2 <3.0.0"
